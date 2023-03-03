@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import ResponsiveNav from './components/ResponsiveNav';
+import HomeBanner from './components/HomeBanner';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+
+export const DarkModeContext = React.createContext(null);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+  const [darkTheme, setDarkTheme] = useState(false);
+    // Check if prefers dark mode in browser
+    useEffect(() => {
+        const darkMode = window.matchMedia('(prefers-color-scheme: dark').matches;
+        if (darkMode) {
+            setDarkTheme(true);
+            document.body.classList.toggle('dark-theme');
+        }
+    }, []);
+
+  return (<>
+          <DarkModeContext.Provider value={{darkTheme: darkTheme, setDarkTheme: setDarkTheme}}>
+          <ResponsiveNav/>
+          <HomeBanner />
+          </DarkModeContext.Provider>
+      </>
   );
 }
 
