@@ -36,6 +36,8 @@ body::-webkit-scrollbar-thumb {
   --text-secondary: #CEE5D0;
   --bg-primary: #FCF8E8;
   --bg-secondary: #ECB390;
+  --skills-web: #EAC7C7;
+  --skills-code: #A0C3D2;
 }
 
 .dark-theme{
@@ -43,6 +45,8 @@ body::-webkit-scrollbar-thumb {
   --text-secondary: #395B64;
   --bg-primary: #2C3333;
   --bg-secondary: #A5C9CA;
+  --skills-web: #0E8388;
+  --skills-code: #443C68;
 }
 
 main {
@@ -56,5 +60,7 @@ main {
   --text-secondary: #CEE5D0;
   --bg-primary: #FCF8E8;
   --bg-secondary: #ECB390;
+  --skills-web: #EAC7C7;
+  --skills-code: #A0C3D2;
   --transition-speed: 600ms;
 }

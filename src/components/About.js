@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import '../styles/Title.css';
+import '../styles/About.css';
 
-export default function Title(){
+export default function About(){
     const containerRef = useRef(null);
     const [ isVisible, setIsVisible ] = useState(false);
     
@@ -22,16 +22,15 @@ export default function Title(){
         }
     }, [containerRef]);
 
-    return(
+    return (
         <>
-        <div id="title-section" className="title-intersection" ref={containerRef}>
-        {isVisible ? 
-            <div className="title-container">
-            <h2><span className="hover">Caitlin Talerico</span></h2>
-            <h3>Full Stack Developer</h3>
-            </div>
-        : <></>}
+        <div id="about-section" className="about-intersection" ref={containerRef}>
+            { isVisible ? <div className="about-container">
+                <h2>About</h2>
+            </div> : <></>}
+            
         </div>
+        <div></div>
         </>
     )
 }

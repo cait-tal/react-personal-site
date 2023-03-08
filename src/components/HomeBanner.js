@@ -10,6 +10,9 @@ import '../styles/HomeBanner.css';
 import { useContext } from 'react';
 import { DarkModeContext } from '../App';
 import Title from './Title';
+import About from './About';
+import Skills from './Skills';
+import Projects from './Projects';
 
 export default function HomeBanner() {
 
@@ -18,32 +21,39 @@ export default function HomeBanner() {
     let layer = document.querySelectorAll('.layer');
     function scrolling(e){
         let X = e.target.scrollTop;
-        layer[1].style.right = X/36 + 'px';
-        layer[2].style.left = X/2 + 'px';
-        layer[3].style.left = X/9 + 'px';
-        layer[4].style.left = X/4 + 'px';
-        layer[5].style.left = X/3 + 'px';
-        layer[6].style.left = X/2 + 'px';
-        layer[0].style.left = X/2 + 'px';
+        layer[0].style.right = X/36 + 'px';
+        layer[1].style.left = X/2 + 'px';
+        layer[2].style.left = X/9 + 'px';
+        layer[3].style.left = X/4 + 'px';
+        layer[4].style.left = X/3 + 'px';
+        layer[5].style.left = X/2 + 'px';
     }
 
     return (
+        <>
+        <img className="background-img" src={darkTheme ? sky : nightSky} alt="sky-background" />
         <div className="container" onScroll={scrolling}>
             <div className="wrapper">
+                
                 <div className="slide">
-                    <div className="layer l1" style={{backgroundImage: `url(${darkTheme ? sky : nightSky})`}}></div>
                     <div className="layer l1" style={{backgroundImage: `url(${clouds1})`}}></div>
                     <div className="layer l1" style={{backgroundImage: `url(${clouds2})`}}></div>
                     <div className="layer l1" style={{backgroundImage: `url(${clouds3})`}}></div>
                     <div className="layer l1" style={{backgroundImage: `url(${clouds4})`}}></div>
                     <div className="layer l1" style={{backgroundImage: `url(${rocks1})`}}></div>
                     <div className="layer l2" style={{backgroundImage: `url(${rocks2})`}}>
+                        <div className="content">
                         <Title />
+                        <About />
+                        <Skills />
+                        <Projects />
+                        </div>
                     </div>
 
                 </div>
             </div>
         </div>
+        </>
     );
 
 }
