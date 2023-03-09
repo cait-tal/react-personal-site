@@ -28,3 +28,153 @@
   top: 45%;
   left: 90%;
 }
+
+:root{
+  --default-diff:  12px;
+  --default-width: 100%;
+  --default-min: 10%;
+}
+
+
+ 
+    .card-stack {
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        margin: 20px auto;
+    }
+
+        .buttons {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.46);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            width: 7%;
+            height: 7%;
+            left: 0;
+            top: 55%;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.7rem;
+            z-index: 100;
+            outline: none;
+            transition:all 0.2s ease;
+        }
+        .buttons:hover {
+          transform: scale(1.3, 1.3);
+        }
+
+        .prev {
+            left: 20px;
+            right: auto;
+        }
+
+        .next {
+            left: auto;
+            right: 20px;
+        }
+
+        .carousel .buttons:hover {
+            color: #C01313 ;
+            background: #fff;
+        }
+        
+        .card-list {
+            width: 300px;
+        }
+
+          .card {
+                transition: all 100ms ease-in-out;
+                border-radius: 2px;
+                position: absolute;
+                list-style: none;
+                height: 300px;
+                -webkit-box-shadow: 0 2px 15px 1px rgba(225, 225, 225, 0.5);
+                box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.5);    
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                padding-top: 20px;
+                text-align: center;
+                background-size:cover;
+          }
+
+                .card:nth-child(1) {
+                    top: calc(var(--default-diff) * 2);
+                    width: calc(var(--default-width) - var(--default-min) * 4);
+                    /* animation: scaleCard 100ms; */
+                }
+                .card:nth-child(2) {
+                    top: calc(var(--default-diff) * 3);
+                    width: calc(var(--default-width) - var(--default-min) * 3);
+                }
+                .card:nth-child(3) {
+                    top: calc(var(--default-diff) * 4);
+                    width: calc(var(--default-width) - var(--default-min) * 2);
+                }
+                .card:nth-child(4) {
+                    top: calc(var(--default-diff) * 5);
+                    width: calc(var(--default-width) - var(--default-min) * 1);
+                }
+			
+				.card-stack:hover 
+				> .buttons.prev {
+					display: block;
+					animation: bounceInLeft 200ms; 
+				}
+
+				.card-stack:hover > .buttons.next {
+					display: block;
+					animation: bounceInRight 200ms; 
+				}
+			
+    
+
+
+.transformThis {
+    animation: scaleDown 500ms;
+}
+
+.transformPrev {
+    animation: scaleUp 100ms;
+		display: none;
+}
+
+@keyframes scaleUp {
+    0% {transform: scale(1.2) translateY(50px); opacity: 0; }
+    20% {transform: scale(1.15) translateY(40px); opacity: 0.10;}
+    40% {transform: scale(1.10) translateY(30px); opacity: 0.20;}
+    60% {transform: scale(1.05) translateY(20px); opacity: 0.40;}
+    80% {transform: scale(1.01) translateY(10px); opacity: 0.80;}
+    100% {transform: scale(1) translateY(0); opacity: 1;}
+}
+
+@keyframes scaleDown {
+    0% {transform: scale(1) translateY(0); opacity: 1; }
+    20% {transform: scale(1.01) translateY(20px); opacity: 0.80;}
+    40% {transform: scale(1.05) translateY(40px); opacity: 0.40;}
+    60% {transform: scale(1.10) translateY(60px); opacity: 0.20;}
+    80% {transform: scale(1.15) translateY(80px); opacity: 0.10;}
+    100% {transform: scale(1.2) translateY(100px); opacity: 0;}
+}
+
+@keyframes scaleCard {
+    0%   {top:5px;}
+    100% {top:24px;}    
+}
+
+@keyframes bounceInLeft {
+  0% { opacity: 0; transform: translateX(40px); }
+  60% { opacity: 1; transform: translateX(20px); } 
+  80% { transform: translateX(20px); } 
+  100% { transform: translateX(0); } 
+}
+
+@keyframes bounceInRight {
+  0% { opacity: 0; transform: translateX(-40px); } 
+  60% { opacity: 1; transform: translateX(-20px); } 
+  80% { transform: translateX(20px); } 
+  100% { transform: translateX(0); } 
+}

@@ -20,7 +20,8 @@ function ResponsiveNav({darkMode}) {
     e.preventDefault();
     const targetElement = document.getElementById('about-section');
     const { bottom } = targetElement.getBoundingClientRect();
-    cont.scrollTo(bottom, 0);
+    // cont.scrollBy(bottom);
+    cont.scrollBy(targetElement.getBoundingClientRect());
   }
 
   return (

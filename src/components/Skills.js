@@ -27,11 +27,11 @@ export default function Skills(){
         <div className="skills-intersection" ref={containerRef}>
             { isVisible ? <div className="skills-container">
                 <h2>Skills</h2>
-                <div class="bar learning" data-skill="Java"></div>
-                <div class="bar back basic" data-skill="Python"></div>
-                <div class="bar back intermediate" data-skill="Angular"></div>
-                <div class="bar front advanced" data-skill="CSS3"></div>
-                <div class="bar front expert" data-skill="HTML5"></div>
+                <div className="bar learning" data-skill="Java"></div>
+                <div className="bar back basic" data-skill="Python"></div>
+                <div className="bar back intermediate" data-skill="Angular"></div>
+                <div className="bar front advanced" data-skill="CSS3"></div>
+                <div className="bar front expert" data-skill="HTML5"></div>
             </div> : <></>}
             
         </div>
