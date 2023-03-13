@@ -1,10 +1,10 @@
 import '../styles/ResponsiveNav.css';
 import React, { useState } from 'react';
-import { FaInfoCircle, FaRocket, FaProjectDiagram, FaGithub, FaLinkedin, FaPhone} from 'react-icons/fa';
+import { FaInfoCircle, FaRocket, FaProjectDiagram, FaPhone} from 'react-icons/fa';
 import { HiHome } from 'react-icons/hi';
 import { GiStarSwirl } from 'react-icons/gi';
-import { SiIndeed } from 'react-icons/si';
 import ModeLink from './ModeLink';
+import Footer from './Footer';
 
 function ResponsiveNav({darkMode}) {
   const cont = document.querySelector('.container');
@@ -89,20 +89,7 @@ function ResponsiveNav({darkMode}) {
           {/* Footer Section: Hidden on Mobile */}
 
           <li className='nav-item footer'>
-            <div>
-              <a href='#'>
-                <FaGithub />
-              </a>
-              <a href='#'>
-                <FaLinkedin />
-              </a>
-              <a href='#'>
-                <SiIndeed />
-              </a>
-              <span className='link-text'>
-                &#169; {new Date().getFullYear()} Caitlin Talerico
-              </span>
-            </div>
+            <Footer />
           </li>
         </ul>
       </div>
