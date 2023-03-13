@@ -20,13 +20,13 @@
 #projects-section {
   position: absolute;
   top: 0;
-  left: 80%;
+  left: 70%;
 }
 
 .projects-intersection {
   position: absolute;
   top: 45%;
-  left: 90%;
+  left: 70%;
 }
 
 :root{
@@ -134,12 +134,11 @@
 
 
 .transformThis {
-    animation: scaleDown 500ms;
+    animation: scaleDown 300ms;
 }
 
 .transformPrev {
-    animation: scaleUp 100ms;
-		display: none;
+    animation: scaleUp 200ms;
 }
 
 @keyframes scaleUp {
@@ -175,6 +174,6 @@
 @keyframes bounceInRight {
   0% { opacity: 0; transform: translateX(-40px); } 
   60% { opacity: 1; transform: translateX(-20px); } 
-  80% { transform: translateX(20px); } 
+  80% { transform: translateX(-20px); } 
   100% { transform: translateX(0); } 
 }

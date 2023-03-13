@@ -1,6 +1,6 @@
 import '../styles/ResponsiveNav.css';
 import React, { useState } from 'react';
-import { FaInfoCircle, FaRocket, FaProjectDiagram, FaGithub, FaLinkedin, FaSun, FaMoon} from 'react-icons/fa';
+import { FaInfoCircle, FaRocket, FaProjectDiagram, FaGithub, FaLinkedin, FaPhone} from 'react-icons/fa';
 import { HiHome } from 'react-icons/hi';
 import { GiStarSwirl } from 'react-icons/gi';
 import { SiIndeed } from 'react-icons/si';
@@ -69,6 +69,17 @@ function ResponsiveNav({darkMode}) {
 
               <span className='link-text'>Projects</span>
             </div>
+          </li>
+          <li className='nav-item'>
+            <a href="#contact-section">
+            <div
+              className='nav-link'
+            >
+              <FaPhone />
+
+              <span className='link-text'>Contact</span>
+            </div>
+            </a>
           </li>
 
           <li className='nav-item'>
