@@ -1,6 +1,6 @@
 .skills-container {
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     border: solid 1px black;
     background-color: rgba(0, 0, 0,0.5);
     animation: fadeInAnimation ease 3s;
@@ -64,14 +64,9 @@
   
 .skills-intersection {
     position: absolute;
-    top: 45%;
+    top: 30%;
     left: 50%;
-}
-
-#skills-section {
-    position: absolute;
-    top: 0%;
-    left: 50%;
+    width: 7%;
 }
 
 .bar{

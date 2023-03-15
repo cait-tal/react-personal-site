@@ -24,7 +24,7 @@ export default function Skills(){
 
     return (
         <>
-        <div className="skills-intersection" ref={containerRef}>
+        <div id="skills-section" className="skills-intersection" ref={containerRef}>
             { isVisible ? <div className="skills-container">
                 <h2>Skills</h2>
                 <div className="bar learning" data-skill="Java"></div>
@@ -35,7 +35,6 @@ export default function Skills(){
             </div> : <></>}
             
         </div>
-        <div id="skills-section" ></div>
         </>
     )
 }

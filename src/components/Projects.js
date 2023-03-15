@@ -5,25 +5,25 @@ let projects =[
     {
         title: "Title Green",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam facere expedita cum qui ratione amet eveniet, fuga dolor beatae optio officiis maiores assumenda tempore facilis itaque autem quas sapiente. Totam!",
-        color: "green",
+        color: "var(--skills-web)",
         class: "card"
     },
     {
         title: "Title Yellow",
         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto error voluptatem cumque earum maiores ut quidem tenetur, assumenda fugiat? Ut est fugiat libero mollitia recusandae quae ex culpa hic eligendi.",
-        color: "yellow",
+        color: "var(--skills-code)",
         class: "card"
     },
     {
         title: "Title Red",
         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae, vitae cupiditate atque rem eligendi assumenda voluptates repellat, error quam asperiores quos, unde pariatur? Reprehenderit mollitia cupiditate provident distinctio! Pariatur?",   
-        color: "red",
+        color: "var(--skills-web)",
         class: "card"
     },
     {
         title: "Title Blue",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, ratione tempora? Deleniti amet voluptates et natus iure quidem numquam aut iste velit laudantium consequuntur, omnis debitis pariatur? At, voluptatum maiores!",
-        color: "blue",
+        color: "var(--skills-code)",
         class: "card activeNow"
     }
 ]
@@ -38,7 +38,7 @@ export default function Projects() {
         const [ entry ] = entries;
         setIsVisible(entry.isIntersecting);
     }
-    console.log(projects[0].class)
+    console.log(projects)
     const movePrev = () => {
         const currentProject = document.querySelector('.card');
             let newProjects = [];
@@ -86,8 +86,7 @@ export default function Projects() {
 
     return(
         <>
-        <div id="projects-section"></div>
-        <div id="projects" className="projects-intersection" ref={containerRef}>
+        <div id="projects-section" className="projects-intersection" ref={containerRef}>
         {isVisible ? 
             <div className="projects-container">
             <h2><span>Projects</span></h2>
@@ -95,7 +94,7 @@ export default function Projects() {
 				<a className="buttons prev" href="#" onClick={movePrev}>&lt;</a>
 				<ul className="card-list">
                     {projectList.map((p, i) =>
-                        <li className={"" + p.class} style={{backgroundColor: p.color}} key={i}><h3>{p.title}</h3></li>
+                        <li className={"" + p.class} style={{backgroundColor: p.color}} key={i}><h3>{p.title}</h3><span className='project-description'>{p.description}</span></li>
                     )}
 			</ul>	
 			<a className="buttons next" href="#" onClick={moveNext}>&gt;</a>
