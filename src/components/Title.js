@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import photo from '../assets/personal_photo.jpg';
 import '../styles/Title.css';
 
 export default function Title(){
+    const imageText = Array.from("Full Stack Developer");
     const containerRef = useRef(null);
     const [ isVisible, setIsVisible ] = useState(false);
     
@@ -21,14 +23,22 @@ export default function Title(){
             }
         }
     }, [containerRef]);
-
+    // Name, image, job title
     return(
         <>
         <div id="title-section" className="title-intersection" ref={containerRef}>
         {isVisible ? 
             <div className="title-container">
-            <h2><span className="hover">Caitlin Talerico</span></h2>
-            <h3>Full Stack Developer</h3>
+            <h1>Caitlin Talerico</h1>
+            <img src={photo} alt="personal-photo" className="circle-img" />
+            <h3 className="rounded-text">
+                {
+                   imageText.map((c, i) => 
+                        // <span key={i} style={{transform: `rotate(${(i + 1) * 6}deg)`}}>{{c}}</span>
+                        <span key={i} style={{transform: `rotate(${(i + 1) * 6}deg)`}} className="rounded-text">{c}</span>
+                   )
+                }
+            </h3>
             </div>
         : <></>}
         </div>

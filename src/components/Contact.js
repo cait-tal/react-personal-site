@@ -21,7 +21,7 @@ export default function Contact(){
             }
         }
     }, [containerRef]);
-
+    // Contact with email or send message through app? Mailchimp?
     return (
         <>
         <div id="contact-section" className="contact-intersection" ref={containerRef}>

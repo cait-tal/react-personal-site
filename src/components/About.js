@@ -21,12 +21,15 @@ export default function About(){
             }
         }
     }, [containerRef]);
-
+    // Education, Job Experience, Certification, Interests/Hobbies
     return (
         <>
         <div id="about-section" className="about-intersection" ref={containerRef}>
             { isVisible ? <div className="about-container">
-                <h2>About</h2>
+                <h2 className="about-title">About</h2>
+                <p>&emsp;Hi! I am a Full Stack Developer with experience creating web-based applications with Angular and Spring Framework.
+                I am eager to create solutions to the problems of today using new technologies. 
+                </p>
             </div> : <></>}
             
         </div>

@@ -24,6 +24,11 @@
     width: 7%;
 }
 
+.about-title {
+  font-size: 2rem;
+  text-align: center;
+}
+
 /* #about-section {
     position: absolute;
     top: 0%;

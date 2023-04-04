@@ -1,11 +1,14 @@
 import { useEffect, useState, useRef } from 'react';
+import { SiGraphql } from 'react-icons/si';
+
 import '../styles/Projects.css';
 
 let projects =[
     {
-        title: "Title Green",
-        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam facere expedita cum qui ratione amet eveniet, fuga dolor beatae optio officiis maiores assumenda tempore facilis itaque autem quas sapiente. Totam!",
+        title: "PDP Management Tool",
+        description: "Internal tool to aid in the allocation and mapping of employees to clients. Included a reports dashboard to show daily, weekly, and monthly budget and headcount trends.",
         color: "var(--skills-web)",
+        icon: <SiGraphql />,
         class: "card"
     },
     {
@@ -83,7 +86,7 @@ export default function Projects() {
             }
         }
     }, [containerRef]);
-
+    // Projects: SpaceEco, Readaway, PDP Management Tool...
     return(
         <>
         <div id="projects-section" className="projects-intersection" ref={containerRef}>
@@ -94,7 +97,7 @@ export default function Projects() {
 				<a className="buttons prev" href="#" onClick={movePrev}>&lt;</a>
 				<ul className="card-list">
                     {projectList.map((p, i) =>
-                        <li className={"" + p.class} style={{backgroundColor: p.color}} key={i}><h3>{p.title}</h3><span className='project-description'>{p.description}</span></li>
+                        <li className={"" + p.class} style={{backgroundColor: p.color}} key={i}><h3>{p.title}</h3><h4>{p.icon}</h4><span className='project-description'>{p.description}</span></li>
                     )}
 			</ul>	
 			<a className="buttons next" href="#" onClick={moveNext}>&gt;</a>

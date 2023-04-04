@@ -21,17 +21,20 @@ export default function Skills(){
             }
         }
     }, [containerRef]);
-
+    // Skills: Java, Python, Angular, Git, HTML, CSS, TypeScript, Docker...
     return (
         <>
         <div id="skills-section" className="skills-intersection" ref={containerRef}>
             { isVisible ? <div className="skills-container">
-                <h2>Skills</h2>
-                <div className="bar learning" data-skill="Java"></div>
+                <h2 className="skills-title">Skills</h2>
+                <div className="skills-list">
+                <div className="bar expert" data-skill="Java"></div>
+                <div className="bar front advanced" data-skill="JavaScript/TypeScript"></div>
                 <div className="bar back basic" data-skill="Python"></div>
-                <div className="bar back intermediate" data-skill="Angular"></div>
-                <div className="bar front advanced" data-skill="CSS3"></div>
-                <div className="bar front expert" data-skill="HTML5"></div>
+                <div className="bar intermediate" data-skill="Angular"></div>
+                <div className="bar front learning" data-skill="React"></div>
+                <div className="bar back advanced" data-skill="HTML5/CSS3"></div>
+                </div>
             </div> : <></>}
             
         </div>
